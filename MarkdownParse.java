@@ -15,11 +15,17 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);
-            String subString = markdown.substring(openParen + 1, closeParen);
-            if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) != '!' && !subString.contains(" ")){
-                toReturn.add(subString);
-            }
+            if(openParen != -1 && closeParen != -1){
+                String subString = markdown.substring(openParen + 1, closeParen);
+                if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) != '!' && !subString.contains(" ")){
+                    toReturn.add(subString);
+                }
             currentIndex = closeParen + 1;
+
+            }
+            else{
+                currentIndex = nextCloseBracket + 1;
+            }
         }
         return toReturn;
     }
