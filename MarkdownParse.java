@@ -17,7 +17,7 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             if(openParen != -1 && closeParen != -1){
                 String subString = markdown.substring(openParen + 1, closeParen);
-                if(nextOpenBracket != 0 && markdown.charAt(nextOpenBracket-1) != '!' && !subString.contains(" ")){
+                if(markdown.charAt(0) != '!' && !subString.contains(" ")){
                     toReturn.add(subString);
                 }
             currentIndex = closeParen + 1;
