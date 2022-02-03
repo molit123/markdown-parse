@@ -45,13 +45,13 @@ public class MarkdownParseTest {
 
 
     //-----------------------------------------PUBLIC TESTS--------------------------------------------------
-    // @Test
-    // public void testGetLinksTestFile2() throws IOException {
-    //     Path fileName = Path.of("testfiles/test-file2.md");
-    //     String contents = Files.readString(fileName);
+    @Test
+    public void testGetLinksTestFile2() throws IOException {
+        Path fileName = Path.of("testfiles/test-file2.md");
+        String contents = Files.readString(fileName);
         
-    //     assertEquals(List.of("https://something.com","https://some-page.html"), MarkdownParse.getLinks(contents));
-    // }
+        assertEquals(List.of("https://something.com","some-page.html"), MarkdownParse.getLinks(contents));
+    }
 
     // @Test
     // public void testGetLinksTestFile3() throws IOException {
