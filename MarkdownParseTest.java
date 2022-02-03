@@ -32,7 +32,7 @@ public class MarkdownParseTest {
         Path fileName = Path.of("image-link.md");
         String contents = Files.readString(fileName);
         
-        assertEquals(List.of("https://notsomething.com", "https://something.com"), MarkdownParse.getLinks(contents));
+        assertEquals(List.of("https://something.com", "https://something.com"), MarkdownParse.getLinks(contents));
     }
 
     @Test
